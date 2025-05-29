@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khar Ast!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8ffae, #43c6ac);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1.2em;
+      border: 2px solid #43c6ac;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #43c6ac;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #36b39c;
+    }
+
+    .output {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #222;
+      font-weight: bold;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Your Name</h1>
+  <input type="text" id="nameInput" placeholder="Type your name here..." />
+  <button onclick="displayText()">Submit</button>
+
+  <div id="output" class="output"></div>
+
+  <script>
+    function displayText() {
+      const name = document.getElementById("nameInput").value.trim();
+      const output = document.getElementById("output");
+      if (name) {
+        output.textContent = `${name} khar ast!`;
+      } else {
+        output.textContent = "Please enter a name!";
+      }
+    }
+  </script>
+</body>
+</html>
